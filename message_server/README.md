@@ -1,5 +1,5 @@
 # Message Server
-This is where you will write your code for this project.
+**You do not need to change anything in this directory for the project. This is just for your reference.**
 
 ## Running the message server
 ```
@@ -52,8 +52,6 @@ FLASK_APP=message_server.py flask run --host=0.0.0.0 -p 4000
 
 ## Files
 Here's an overview of the files in the directory.
-
-**You do not need to change anything here for the project.**
 
 ### `message_server.py`
 This file implements the routes for the message server. It is basically the same
