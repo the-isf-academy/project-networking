@@ -90,7 +90,7 @@ services_dict = {
         "help": []
 }
 ```
-*Note that one of the services in your `services_dict` must be `"help": []`.
+*Note that one of the services in your `services_dict` must be `"help": []`.*
 
 As a reminder, here is a list of the types you might need for your bot:
 * `int` - an integer (i.e. `13`)
@@ -108,8 +108,12 @@ This module contains helper functions used by the bot server.
 Ensures that the data sent with an HTTP request
 contains all expected params and no unexpected params.
 
-`values_dict` - a dictionary of values sent with the HTTP request
-`expected` - a list of the values expected in the `values_dict`
+<ins>Parameters:</ins>
+* `values_dict` - a dictionary of values sent with the HTTP request
+* `expected` - a list of the values expected in the `values_dict`
+
+<ins>Returns:</ins>
+* a list of errors found while checking payload (empty list implies no errors in payload)
 
 #### `parse_service_and_args_from(msg, services_dict)`
 Parses the message, `msg`, sent to the bot into the service and the arguments for the service, 
@@ -117,15 +121,29 @@ formats the arguments and checks for errors, and returns serivce, arguments, and
 Arguments in the `msg` should be single words, separated by spaces (execpt for the last argument).
 Arguments will be returned as a list of values based on the expected values defined in the `services_dict`.
 
-`msg` - string contain service and arguments separated by single spaces
-`services_dict` - dictionary with each service provided by the bot as a string paired with a list of the types
+<ins>Parameters:</ins>
+* `msg` - string contain service and arguments separated by single spaces
+* `services_dict` - dictionary with each service provided by the bot as a string paired with a list of the types
 that service requires
+
+<ins>Returns:</ins>
+* a tuple containing:
+  * the single word service string
+  * a list of single word argument strings
+  * a list of error strings
 
 #### `format_arguments(service, args, services_dict)`
 Checks to make sure the arguements, `args`, are valid given the defintions in the `services_dict` and 
-formats the arguments into the types defined in the `services_dict`.
+formats the arguments into the types defined in the `services_dict`. A description of errors found is placed into the
+errors list and returned
 
-`service` - single word string containing the service
-`args` - list of single word strings containing the arguments for the service
-`services_dict` - dictionary with each service provided by the bot as a string paired with a list of the types
+<ins>Parameters:</ins>
+* `service` - single word string containing the service
+* `args` - list of single word strings containing the arguments for the service
+* `services_dict` - dictionary with each service provided by the bot as a string paired with a list of the types
 that service requires
+
+<ins>Returns:</ins>
+* a tuple containing:
+  * the list of formatted arguments
+  * a list of error strings
