@@ -5,6 +5,17 @@
 
 import requests
 
+# service provided and expected arguments
+
+services_dict = {
+        "add": [float, float],
+        "subtract": [float, float],
+        "multiply": [float, float],
+        "divide": [float, float],
+        "search": [str],
+        "help": []
+}
+
 def add(a, b):
     """ Adds two numbers together and returns the result.
     """

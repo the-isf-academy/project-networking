@@ -5,7 +5,7 @@
 
 def check_payload(values_dict, expected):
     """
-    A helper to ensure that the data sent with a POST request
+    A helper to ensure that the data sent with an HTTP request
     contains all expected params and no unexpected params. 
     """
     errors = []
@@ -42,7 +42,8 @@ def parse_service_and_args_from(msg, services_dict):
 
 def format_arguments(service, args, services_dict):
     """ Checks to make sure the arguments are valid given
-    the defintions in the services_dict
+    the defintions in the services_dict and formats the arguments into the types
+    defined in the services_dict.
     """
     formatted_args = []
     errors = []
