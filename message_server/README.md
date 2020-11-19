@@ -1,5 +1,5 @@
 # Message Server
-**You do not need to change anything in this directory for the project. This is just for your reference.**
+**🚫✏️ You do not need to change anything in this directory for the project. This is just for your reference. 🚫✏️**
 
 ## Running the message server
 ```
