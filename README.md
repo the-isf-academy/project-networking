@@ -14,3 +14,13 @@ In This project, you will develop a bot that runs on the cs10 messaging platform
 * [message_client](message_client/) - Client application to interface with the messaging platform (*no need to edit*)
   * [client.py](message_client/client.py) - Client file that runs the messaging app
   * [view.py](message_client/view.py) - Class defining the View for the messaging app
+  
+## Getting started
+Here's the general workflow for running all the parts of this project:
+1. Start the `bot_server`
+2. Start the `message_server`
+3. Start `message_client`
+4. Use the `message_client` to send and recieve messages
+
+## Project spec
+The details for what to do in this project can be found in the [project spec on the cs10 website](http://cs.fablearn.org/courses/cs10/unit00/project/)
