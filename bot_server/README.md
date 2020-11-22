@@ -1,12 +1,16 @@
 # Bot Server
 **✏️ This is where you will write your code for this project. ✏️**
 
-## Running the Bot server
+## Accessing the bot
+To access the bot, you should follow the instructions below to run the bot server and access
+it either locally or remotely.
+
+### Running the Bot server
 ```
 $ bash run.sh
 ```
 
-## Accessing the server from your local computer
+### Accessing the server from your local computer
 After running the server, you will be able to send HTTP requests to `http://localhost:5000`
 
 Your can test the server locally by running the following command in your terminal:
@@ -21,7 +25,7 @@ Server: Werkzeug/1.0.1 Python/3.8.5
 Hello from the cs10 message bot!
 ```
 
-## Accessing the server from another computer
+### Accessing the server from another computer
 Another computer on the same wifi network can access your bot server by using your IP address.
 
 On a Mac, find your IP address by running the following command in your terminal:
@@ -42,6 +46,19 @@ Server: Werkzeug/1.0.1 Python/3.8.5
 
 Hello from a cs10 message bot!
 ```
+
+## Services
+✏️ **EDIT THIS SECTION OF THE README TO DESCRIBE THE SERVICES YOUR BOT PROVIDES.** ✏️
+
+Here's an example:
+
+| Service  | Description                                                                                   | API Route   | Message Platform Command | Parameters (with types)                                                                                                                                        | Example Usage       | Returns                                |
+|----------|-----------------------------------------------------------------------------------------------|-------------|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|----------------------------------------|
+| add      | Adds two numbers and returns the sum                                                          | `/add`      | `add num0 num1`            | num0 (`float`): first number to sum, num1 (`float`): second number to sum                                                                                      | add 3 4             | `{ "value": sum of nums }`             |
+| subtract | Subtracts two numbers and returns the difference                                              | `/subtract` | `subtract num0 num1`       | num0 (`float`): number, num1 (`float`): number to subtract from num0                                                                                           | subtract 5 2        | `{ "value": difference of nums }`      |
+| search   | Searches Wolfram Alpha for a query and returns the short text response                        | `/search`   | `search query`             | query (`string`): term to search for                                                                                                                           | search golden ratio | `{ "result": result }`                 |
+| message  | Receives a message from the messaging platform, triggers the service, and returns the result. | `/message`  | n/a                      | sender (`string`): who sent the service request, msg (`string`): message containing service request, timestamp (`float`): the time in seconds since the  epoch | n/a                 | `{ "msg": result of service request }` |
+
 
 ## Files
 Here's an overview of the files in the directory and what you should do with them.
