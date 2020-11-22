@@ -176,7 +176,7 @@ def send_message():
                     }
             r = requests.post(server_address, json=payload)
             if r.ok:
-                return save_message_to_db(recipient, sender, r.text, timestamp)
+                return save_message_to_db(recipient, sender, r.json()["msg"], timestamp)
             else:
                 try:
                     errors = r.json()["errors"]

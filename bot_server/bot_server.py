@@ -28,19 +28,19 @@ def new_message():
 
     # perform service
     if service == "help":
-        return help()
+        return { "msg": help() }
     elif service == "add":
-        return str(add(arguments[0], arguments[1]))
+        return { "msg": add(arguments[0], arguments[1]) }
     elif service == "subtract":
-        return str(subtract(arguments[0], arguments[1]))
+        return { "msg": subtract(arguments[0], arguments[1]) }
     elif service == "multiply":
-        return str(multiply(arguments[0], arguments[1]))
+        return { "msg": multiply(arguments[0], arguments[1]) }
     elif service == "divide":
-        return str(divide(arguments[0], arguments[1]))
+        return { "msg": divide(arguments[0], arguments[1]) }
     elif service == "search":
-        return search(arguments[0])
+        return { "msg": search(arguments[0]) }
     else:
-        return "Sorry, I don't know how to do that."
+        return { "msg": "Sorry, I don't know how to do that." }
 
 @app.route('/help', methods=['GET'])
 def help():
@@ -66,7 +66,8 @@ def add_wrapper():
         return {"errors": errors}, 400
     a = float(data['num0'])
     b = float(data['num1'])
-    return str(add(a, b))
+    numsum = add(a, b)
+    return { "value": numsum }
 
 @app.route('/subtract', methods=['GET'])
 def subtract_wrapper():
@@ -76,7 +77,8 @@ def subtract_wrapper():
         return {"errors": errors}, 400
     a = float(data['num0'])
     b = float(data['num1'])
-    return str(subtract(a, b))
+    difference = subtract(a, b)
+    return { "value": difference }
 
 @app.route('/multiply', methods=['GET'])
 def multiply_wrapper():
@@ -86,7 +88,8 @@ def multiply_wrapper():
         return {"errors": errors}, 400
     a = float(data['num0'])
     b = float(data['num1'])
-    return str(multiply(a, b))
+    product = multiply(a, b)
+    return { "value": product }
 
 @app.route('/divide', methods=['GET'])
 def divide_wrapper():
@@ -96,7 +99,8 @@ def divide_wrapper():
         return {"errors": errors}, 400
     a = float(data['num0'])
     b = float(data['num1'])
-    return str(divide(a, b))
+    quotient = divide(a, b)
+    return { "value": quotient }
 
 @app.route('/search', methods=['GET'])
 def search_wrapper():
@@ -105,5 +109,6 @@ def search_wrapper():
     if len(errors) > 0:
         return {"errors": errors}, 400
     query = data['query']
-    return(search(query))
+    result = search(query)
+    return { "result": result }
 
