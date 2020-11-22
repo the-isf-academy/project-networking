@@ -3,7 +3,7 @@ In This project, you will develop a bot that runs on the cs10 messaging platform
 
 ## Repo outline
 * [bot_server](bot_server/) - Server to run your bot services (*where you will write your code for this lab*)
-  * [server.py](bot_server/server.py) - Server file with route implementations (**add code here**)
+  * [server.py](bot_server/bot_server.py) - Server file with route implementations (**add code here**)
   * [services.py](bot_server/services.py) - Module containing the services your bot performs (**add code here**)
   * [helpers.py](bot_server/helpers.py) - Module containing helper functions to support your bot (**use these, but don't edit**)
   * [run.sh](bot_server/run.sh) - Script to run the bot_server from the command line (*no need to edit*)
