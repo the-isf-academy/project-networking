@@ -56,7 +56,7 @@ def help():
             "multiply [num0] [num1]\n" \
             "divide [num0] [num1]\n" \
             "search [search query or question]"
-    return message
+    return { "msg": message }
 
 @app.route('/add', methods=['GET'])
 def add_wrapper():
