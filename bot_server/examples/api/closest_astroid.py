@@ -41,22 +41,19 @@ def find_closest_neo_from(neo_list):
         for close_approach in close_approach_list:
             # compare miss distance of this approach to the smallest miss_distance of the approaches we've seen so far
             miss_distance_km = float(close_approach["miss_distance"]["kilometers"])
-            print("name: {}. distance: {}".format(neo["name"], miss_distance_km))
             if miss_distance_km < closest_approach_distance:
-                print("closer than previously found approach")
                 closest_close_approach = close_approach
                 closest_approach_distance = miss_distance_km
         # compare miss distance of this neo to the smallest miss distance of the neos we've seen so far
         miss_distance_km = closest_approach_distance
         if miss_distance_km < closest_miss_distance:
-            print("closer than previously found neo")
             closest_neo = neo
             closest_miss_distance = miss_distance_km
             closest_neo_closest_approach = closest_close_approach
     return closest_neo, closest_neo_closest_approach
 
-print("This script finds the nearest astroid to pass earth on a particular date using the NASA Neo API")
-date = input("What date would you like to search for? (YYY-MM-DD) ")
+print("This script finds the nearest astroid to pass earth on a particular date using the NASA Neo API. ☄️")
+date = input("What date would you like to search for? (YYYY-MM-DD) ")
 neo_list = get_neos_for_date_range(date, date)
 if neo_list:
     closest_neo, closest_approach = find_closest_neo_from(neo_list)
